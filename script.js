@@ -1,20 +1,28 @@
-$(function(){
-    $(".tricky").on({
-        mouseover:function(){
-            $(this).css({
-                left:(Math.random()*90)+"%",
-                top:(Math.random()*90)+"%",
-            });
-        }
-    });
-    $(".btn-wrap").hover(function() {
-           $(this).toggleClass('active');
-    });
+const wrapper = document.querySelector('.wrapper');
+const question = document.querySelector('.question');
+const yesBtn = document.querySelector('.yes-btn');
+const noBtn = document.querySelector('.no-btn');
+const popup = document.querySelector('.popup');
+const closeBtn = document.querySelector('.close-btn');
+
+const wrapperRect = wrapper.getBoundingClientRect();
+const noBtnRect = noBtn.getBoundingClientRect();
+
+noBtn.addEventListener('mouseover', () => {
+    const i = Math.floor(Math.random() * (wrapperRect.width - noBtnRect.width)) + 1;
+    const j = Math.floor(Math.random() * (wrapperRect.height - noBtnRect.height)) + 1;
+
+    noBtn.style.left = i + 'px';
+    noBtn.style.top = j + 'px';
 });
 
-$('.tricky').bind('touchstart', function(){
-    $(this).css({
-        left:(Math.random()*90)+"%",
-        top:(Math.random()*90)+"%"
-    });
-})
+// Show popup on 'Yes' button click
+yesBtn.addEventListener('click', () => {
+    wrapper.classList.add('hide');
+    popup.classList.add('show');
+});
+
+// Add event listener to close button
+document.querySelector('.close-btn').addEventListener('click', function () {
+    window.close(); // Close the browser window
+});

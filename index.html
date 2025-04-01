@@ -1,17 +1,52 @@
-<div class="wrapper">
-  
-    <h1>Do you like to click buttons?</h1>
-    
-    <div class="btn-wrap static">
-      <a href="javascript:void(0)" class="btn" title="Yes">
-        <span>Yes</span>
-      </a>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Box & Button Randomly Change Position | Codehal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Message for mobile users -->
+    <div class="mobile-message">
+        <h1>Please open this page on a laptop or view in desktop site for the best experience.</h1>
+        <h3>type : neerajdhurandher.me/will-you-be-my-date</h3>
+        <h2 style="color: #721c24;">or</h2>
+        <h3>Click the three dots in the top right corner of your browser and select "Desktop Site".</h3>
+        
     </div>
-  
-    <div class="btn-wrap tricky">
-      <a href="javascript:void(0)" class="btn" title="No">
-        <span></span>
-      </a>
+
+    <!-- Video Background -->
+    <video autoplay muted loop class="background-video">
+        <source src="background-video.mp4" type="video/mp4">
+        <track src="subtitles-en.vtt" kind="subtitles" srclang="en" label="English">
+        <track src="description-en.vtt" kind="descriptions" srclang="en" label="English Description">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="wrapper">
+        <i class="fa-solid fa-circle-question"></i>
+        <h2 class="question">Will you be my date?</h2>
+        <div class="btn-group">
+            <button class="yes-btn">Yes</button>
+            <button class="no-btn">No</button>
+        </div>
     </div>
-    
-  </div>
+
+    <!-- Popup container -->
+    <div class="popup hidden">
+        <div class="popup-content">
+            <a class="close-btn">&times;</a>
+            <h2> Be ready for a magical evening filled with joy and unforgettable moments.</h2>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
