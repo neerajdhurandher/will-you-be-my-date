@@ -23,6 +23,7 @@ yesBtn.addEventListener('click', () => {
 });
 
 // Add event listener to close button
-document.querySelector('.close-btn').addEventListener('click', function () {
-    window.close(); // Close the browser window
+closeBtn.addEventListener('click', function () {
+    popup.classList.remove('show');
+    wrapper.classList.remove('hide');
 });
